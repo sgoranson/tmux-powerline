@@ -21,9 +21,9 @@ TMUX_POWERLINE_DEFAULT_RIGHTSIDE_SEPARATOR=${TMUX_POWERLINE_DEFAULT_RIGHTSIDE_SE
 
 # Format: segment_name background_color foreground_color [non_default_separator]
 
-if [ $(hostname) -eq stinkpad ]; then
+if [ $(hostname) = stankpad ]; then
     TMUX_POWERLINE_HOST="hostname 2 0"
-elif [ $(hostname) -eq stinkmyth ]; then
+elif [ $(hostname) = stinkmyth ]; then
     TMUX_POWERLINE_HOST="hostname 4 7"
 else
     TMUX_POWERLINE_HOST="hostname 1 7"
