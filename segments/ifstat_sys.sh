@@ -3,7 +3,7 @@
 
 run_segment() {
 	sleeptime="0.5"
-	iface="wlp3s0"
+	iface=$ETHMAIN
 	RXB=$(</sys/class/net/"$iface"/statistics/rx_bytes)
 	TXB=$(</sys/class/net/"$iface"/statistics/tx_bytes)
 	sleep "$sleeptime"
