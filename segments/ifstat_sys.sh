@@ -3,10 +3,10 @@
 
 run_segment() {
 	sleeptime="0.5"
-	iface="wlan0"
+	iface="wlp3s0"
 	RXB=$(</sys/class/net/"$iface"/statistics/rx_bytes)
 	TXB=$(</sys/class/net/"$iface"/statistics/tx_bytes)
-	sleep "$sleeptime" 
+	sleep "$sleeptime"
 	RXBN=$(</sys/class/net/"$iface"/statistics/rx_bytes)
 	TXBN=$(</sys/class/net/"$iface"/statistics/tx_bytes)
 	RXDIF=$(echo $((RXBN - RXB)) )
