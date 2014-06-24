@@ -21,22 +21,25 @@ TMUX_POWERLINE_DEFAULT_RIGHTSIDE_SEPARATOR=${TMUX_POWERLINE_DEFAULT_RIGHTSIDE_SE
 
 # Format: segment_name background_color foreground_color [non_default_separator]
 
+if [ $(hostname) -eq stinkpad ]; then
+    TMUX_POWERLINE_HOST="hostname 2 0"
+elif [ $(hostname) -eq stinkmyth ]; then
+    TMUX_POWERLINE_HOST="hostname 4 7"
+else
+    TMUX_POWERLINE_HOST="hostname 1 7"
+fi
+
 if [ -z $TMUX_POWERLINE_LEFT_STATUS_SEGMENTS ]; then
 	TMUX_POWERLINE_LEFT_STATUS_SEGMENTS=(
-		"hostname 2 0" \
+		"$TMUX_POWERLINE_HOST" \
 		"ifstat_sys 0 6" \
 	)
 fi
 
 if [ -z $TMUX_POWERLINE_RIGHT_STATUS_SEGMENTS ]; then
 	TMUX_POWERLINE_RIGHT_STATUS_SEGMENTS=(
-		#"pwd 89 211" \
 		"cpu 2 0" \
-		#"load 237 167" \
-		#"tmux_mem_cpu_load 234 136" \
 		"battery 5 0" \
-		#"weather 4 7" \
-		#"date_day 0 6" \
 		"date 0 6 "\
 		"time 0 6 ${TMUX_POWERLINE_SEPARATOR_LEFT_THIN}" \
 	)
